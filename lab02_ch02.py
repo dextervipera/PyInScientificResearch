@@ -25,8 +25,9 @@ def lab021_ch(str, sub=''):
 print('Even simplier')
 print(lab021_ch(s0))
 
-assert lab021_ch('') == ''
-assert lab021_ch('a') == 'A'
-assert lab021_ch('aaa bbb ccccc') == 'Aaa Bbb Ccccc'
-assert lab021_ch(s0) == chk
+for func in (lab021_ch, lab02_ch):
+    assert func('') == ''
+    assert func('a') == 'A'
+    assert func('aaa bbb ccccc') == 'Aaa Bbb Ccccc'
+    assert func(s0) == chk
 
