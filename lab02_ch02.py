@@ -22,10 +22,11 @@ def lab02_ch(str, sub=''):
 def lab021_ch(str, sub=''):
   return str.upper()+sub if len(str)<=1 else lab021_ch(str[:-1], str[-1:].upper()+sub) if str[-2] in (' ','\n') else lab021_ch(str[:-1], str[-1]+sub)
 
+## simpliest solution
 def lab023_ch(str):
 	return str.upper() if len(str)<=1 else lab023_ch(str[:-1])+str[-1].upper() if str[-2] in {' ','\n'} else lab023_ch(str[:-1])+str[-1]
 	
-print('Even simplier')
+print('Simpliest solution')
 print(lab023_ch(s0))
 
 for func in (lab023_ch, lab021_ch, lab02_ch):
