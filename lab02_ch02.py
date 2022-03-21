@@ -22,10 +22,22 @@ def lab02_ch(str, sub=''):
 def lab021_ch(str, sub=''):
   return str.upper()+sub if len(str)<=1 else lab021_ch(str[:-1], str[-1:].upper()+sub) if str[-2] in (' ','\n') else lab021_ch(str[:-1], str[-1]+sub)
 
+def lab022_ch(str):
+	print(str)
+	if len(str) <= 1:
+		return str.upper()
+	if str[-2] == ' ':
+		return lab022_ch(str[:-1])+str[-1].upper()
+	else:
+		return lab022_ch(str[:-1])+str[-1]
+	
+def lab023_ch(str):
+	return str.upper() if len(str)<=1 else lab023_ch(str[:-1])+str[-1].upper() if str[-2] in {' ','\n'} else lab023_ch(str[:-1])+str[-1]
+	
 print('Even simplier')
-print(lab021_ch(s0))
+print(lab023_ch(s0))
 
-for func in (lab021_ch, lab02_ch):
+for func in (lab023_ch, lab021_ch, lab02_ch):
     assert func('') == ''
     assert func('a') == 'A'
     assert func('aaa bbb ccccc') == 'Aaa Bbb Ccccc'
