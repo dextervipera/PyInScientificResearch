@@ -10,7 +10,7 @@ def listprocess(lst):
         for wn, word in enumerate(line):
             lst[ln][wn] = lst[ln][wn].capitalize()
     
-    return ('\n'.join([' '.join(word) for word in [line for line in lst] ]))
+    return('\n'.join([' '.join(word) for word in [line for line in lst] ]))
 
-print( listprocess( strprep(s) ) )
+print(listprocess(strprep(s)))
 
