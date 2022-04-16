@@ -4,3 +4,4 @@ def foo(str):
     else foo(str[:-1])+str[-1]
 
 print(foo('xxx xxx\nyy yy\nzzz zzzzz'))
+

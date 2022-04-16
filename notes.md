@@ -329,3 +329,15 @@ for line in s1:
 		word_tmp = ' '.join(word)
 	print(word_tmp)
 ```		
+
+# f'string
+
+f'dada {zmienna}'
+
+# moduł sys
+dir(sys) - zawartość przestrzeni nazw
+
+## tymczasowa dir wyszukiwania
+sys.path
+
+sys.path.append('disk:/directory/')
