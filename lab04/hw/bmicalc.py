@@ -1,5 +1,5 @@
 import argparse
-import ast, colorama
+import colorama
 
 colorama.init()
 
