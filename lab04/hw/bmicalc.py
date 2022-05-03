@@ -19,24 +19,24 @@ def parseargs():
 def textcolor(text, style=colorama.Style.RESET_ALL):
     print(f"{style} {text} {colorama.Style.RESET_ALL}")
 
+def any2str(any) -> str:
+    if isinstance(any, (float, )):
+        return f"{any:.2f}"
+    else:
+        return any    
+
 def argdisplay (args, argn, spec=False):
     if argn in translator.keys():
         _argn = translator[argn]
     else:
         _argn = argn
-        
-    if not spec:
-        print(f"{colorama.Fore.CYAN} {_argn:>10} \
-        {colorama.Style.RESET_ALL}: {colorama.Style.BRIGHT} \
-        {args[argn]:} \
-        {colorama.Style.RESET_ALL}" )
-    else:
-        print(f"{colorama.Fore.CYAN} {argn:>10} \
-        {colorama.Style.RESET_ALL}: {colorama.Style.BRIGHT} \
-        {args[argn]:.2f} {colorama.Style.RESET_ALL}" )    
+    
+    any2str = lambda any: f"{any:.2f}" if isinstance(any, (float,)) else any
+    
+    print(f" |{colorama.Fore.CYAN} {_argn:>10}{colorama.Style.RESET_ALL}: {colorama.Style.BRIGHT}{any2str(args[argn])} {colorama.Style.RESET_ALL}" )   
 
 def display(base, mode=None):
-    textcolor('------------ New record ------------', colorama.Style.BRIGHT)
+    textcolor('+------- New record --------', colorama.Style.BRIGHT)
     argdisplay(base,'name')
     argdisplay(base,'BMI',True)
     if mode=='full':
