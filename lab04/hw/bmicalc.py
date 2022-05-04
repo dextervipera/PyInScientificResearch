@@ -25,7 +25,7 @@ def any2str(any) -> str:
     else:
         return any    
 
-def argdisplay (args, argn, spec=False):
+def argdisplay (args, argn):
     if argn in translator.keys():
         _argn = translator[argn]
     else:
@@ -38,7 +38,7 @@ def argdisplay (args, argn, spec=False):
 def display(base, mode=None):
     textcolor('+------- New record --------', colorama.Style.BRIGHT)
     argdisplay(base,'name')
-    argdisplay(base,'BMI',True)
+    argdisplay(base,'BMI')
     if mode=='full':
         argdisplay(base,'height')
         argdisplay(base,'mass')      
