@@ -14,6 +14,7 @@ import subprocess
 def main():
     print('Hoimework example')
     sys.path.insert(0,str(Path.cwd().parent)+'.')
+    subprocess.run(['python', 'bmicalc.py', '120.3','1.45', '-n', 'Agatka'])
     subprocess.run(['python', 'bmicalc.py', '88.7','1.75', '-n', 'Agatka', '-d', 'full'])
     subprocess.run(['python', 'bmicalc.py', '45','1.45','-n','Jacek', '-d', 'full'])
     
