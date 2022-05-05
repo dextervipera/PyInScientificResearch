@@ -3,7 +3,7 @@ import colorama
 
 colorama.init()
 
-translator = {'name':'imię', 
+translation = {'name':'imię', 
               'mass':'waga',
               'height':'wysokość'}    
 
@@ -25,14 +25,9 @@ def any2str(any) -> str:
         return any    
 
 def argdisplay (args, argn):
-    if argn in translator.keys():
-        _argn = translator[argn]
-    else:
-        _argn = argn
-    
+    _argn = lambda arg_caption, dictionary: dictionary[arg_caption] if arg_caption in dictionary else arg_caption
     any2str = lambda any: f"{any:.2f}" if isinstance(any, (float,)) else any
-    
-    print(f" |{colorama.Fore.CYAN} {_argn:>10}{colorama.Style.RESET_ALL}: {colorama.Style.BRIGHT}{any2str(args[argn])} {colorama.Style.RESET_ALL}" )   
+    print(f" |{colorama.Fore.CYAN} {_argn(argn,translation):>10}{colorama.Style.RESET_ALL}: {colorama.Style.BRIGHT}{any2str(args[argn])} {colorama.Style.RESET_ALL}" )   
 
 def display(base, mode=None):
     textcolor('+------- New record --------', colorama.Style.BRIGHT)
