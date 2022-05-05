@@ -18,12 +18,6 @@ def parseargs():
 def textcolor(text, style=colorama.Style.RESET_ALL):
     print(f"{style} {text} {colorama.Style.RESET_ALL}")
 
-def any2str(any) -> str:
-    if isinstance(any, (float, )):
-        return f"{any:.2f}"
-    else:
-        return any    
-
 def argdisplay (args, argn):
     _argn = lambda arg_caption, dictionary: dictionary[arg_caption] if arg_caption in dictionary else arg_caption
     any2str = lambda any: f"{any:.2f}" if isinstance(any, (float,)) else any
